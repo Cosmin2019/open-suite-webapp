@@ -1,7 +1,7 @@
 /*
  * Axelor Business Solutions
  *
- * Copyright (C) 2021 Axelor (<http://axelor.com>).
+ * Copyright (C) 2005-2020 Axelor (<http://axelor.com>).
  *
  * This program is free software: you can redistribute it and/or  modify
  * it under the terms of the GNU Affero General Public License, version 3,
@@ -15,6 +15,23 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
- function getAppHome () {
-	return location.protocol + '//' + location.host + location.pathname.substring(0, location.pathname.search(/\/map\/.*/));
- }
+package com.axelor.gradle.tasks.changelog;
+
+public enum EntryType {
+  FEATURE("Features"),
+  CHANGE("Changes"),
+  DEPRECATE("Deprecated"),
+  REMOVE("Removed"),
+  FIX("Fixed"),
+  SECURITY("Security");
+
+  private final String value;
+
+  private EntryType(String value) {
+    this.value = value;
+  }
+
+  public String getValue() {
+    return value;
+  }
+}
